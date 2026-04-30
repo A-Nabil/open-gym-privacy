@@ -1,5 +1,6 @@
 ---
 title: Privacy Policy — Open Gym
+permalink: /
 ---
 
 # Privacy Policy — Open Gym
