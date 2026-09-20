@@ -154,14 +154,20 @@ The App connects to the following third-party services. We have no
 control over the data practices of these providers. We recommend you
 read their privacy policies if you have concerns.
 
-### 3.1 Microsoft Azure (data processor)
+### 3.1 Microsoft Azure, including Azure OpenAI (data processor)
 
-Our backend runs on **Microsoft Azure Functions** (region:
-West Europe). When you generate a plan, your profile inputs are
-transmitted to Azure to be processed. Microsoft acts as our **data
-processor** under Article 28 GDPR. See Microsoft's Data Protection
-Addendum and privacy statement at
+Our backend runs on **Microsoft Azure Functions** (region: West Europe).
+When you generate a plan, your profile inputs are transmitted to Azure to
+be processed. Microsoft acts as our **data processor** under Article 28
+GDPR. See Microsoft's Data Protection Addendum and privacy statement at
 <https://privacy.microsoft.com/en-us/privacystatement>.
+
+The plan itself is written by a large language model running on
+**Azure OpenAI Service**, which is part of the same Microsoft environment —
+your data is **not sent to OpenAI or to any other model provider**, and
+Microsoft states that data submitted to Azure OpenAI is not used to train
+its models. In other words, the inputs listed in section 2.3 reach
+Microsoft and no one else.
 
 ### 3.2 YouTube (Google LLC)
 
