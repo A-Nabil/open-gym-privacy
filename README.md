@@ -140,7 +140,7 @@ precise coordinates. The request is made by your device directly to
 | `INTERNET`, `ACCESS_NETWORK_STATE` | To call our backend and load exercise videos/images |
 | `POST_NOTIFICATIONS` | To send local workout and meal reminders you schedule |
 | `VIBRATE` | To vibrate the device when a notification fires |
-| `USE_EXACT_ALARM` | So a workout rest timer fires at the second it is due while the App is in the background |
+| `SCHEDULE_EXACT_ALARM` | So a workout rest timer fires at the second it is due while the App is in the background. You are asked for this one and may decline; the reminder then arrives a little late instead of exactly on time |
 | `RECEIVE_BOOT_COMPLETED` | To re-register your scheduled local notifications after the device restarts |
 
 The App does **not** request location, camera, microphone, contacts, SMS,
