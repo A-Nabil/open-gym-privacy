@@ -6,7 +6,7 @@ permalink: /
 # Privacy Policy — Open Gym
 
 **Effective date:** 30 April 2026
-**Last updated:** 30 April 2026
+**Last updated:** 20 September 2026
 
 This Privacy Policy explains how the **Open Gym** mobile application
 (package name `com.opengym.app`, the "App") collects, uses, and protects your
@@ -97,9 +97,20 @@ your device until you delete them or uninstall the App.
 
 ### 2.3 Information transmitted to our backend
 
-When you request a workout or nutrition plan, the App sends a subset of
-your onboarding data to our backend at
-`https://open-gym-backend.azurewebsites.net` so it can generate the plan.
+When you request a workout or nutrition plan, the App sends the following
+to our backend at `https://open-gym-backend.azurewebsites.net` so it can
+generate the plan:
+
+- age, gender, height, weight and activity level,
+- your training goal and experience level,
+- your dietary restrictions, **allergies** and foods you want to avoid,
+- your meal-frequency, budget and cooking-skill preferences,
+- the calorie and protein targets calculated on your device,
+- the country detected in section 2.4.
+
+No name, email address, account identifier, advertising ID or device
+identifier is sent, and nothing in the request links one request to
+another.
 The legal basis for this processing is **performance of a contract**
 (Article 6(1)(b) GDPR) — providing the plan you requested — and your
 **explicit consent** for any health-related fields (Article 9(2)(a)).
@@ -129,6 +140,7 @@ precise coordinates. The request is made by your device directly to
 | `INTERNET`, `ACCESS_NETWORK_STATE` | To call our backend and load exercise videos/images |
 | `POST_NOTIFICATIONS` | To send local workout and meal reminders you schedule |
 | `VIBRATE` | To vibrate the device when a notification fires |
+| `USE_EXACT_ALARM` | So a workout rest timer fires at the second it is due while the App is in the background |
 | `RECEIVE_BOOT_COMPLETED` | To re-register your scheduled local notifications after the device restarts |
 
 The App does **not** request location, camera, microphone, contacts, SMS,
@@ -163,8 +175,8 @@ do not receive this data.
 
 ### 3.3 Google Fonts (Google LLC)
 
-The App downloads typography (the "Inter" and "Space Grotesk" font
-families) from **Google Fonts** (`fonts.googleapis.com`) on first
+The App downloads typography (the "Familjen Grotesk" and "Instrument
+Sans" font families) from **Google Fonts** (`fonts.googleapis.com`) on first
 launch and caches them locally. The request includes your IP address.
 See <https://policies.google.com/privacy>.
 
@@ -194,9 +206,13 @@ that Microsoft Azure produces for operational reasons (see section 2.3).
 
 ## 5. Children
 
-The App is **not directed at children under 13** and we do not knowingly
-collect personal data from children under 13. The recommended Play Store
-target audience for the App is **13 and older**. If you believe a child
+The App is **not directed at children** and we do not knowingly collect
+personal data from anyone under 18. The Play Store target audience for the
+App is **18 and older**: it gives training and nutrition guidance,
+including calorie targets for weight change, which is not appropriate
+advice for a child. (The App's *content rating* is 3+ / Everyone, which
+describes its content — no violence, language or other rated material —
+and is a separate matter from who it is aimed at.) If you believe a child
 under 13 has used the App and provided personal data, please contact us
 at the email above and we will take reasonable steps to delete the data.
 
@@ -308,5 +324,3 @@ For any privacy-related question or to exercise your rights, contact:
 **Ahmed Nabil**
 Email: **a.nabil.abdalah@gmail.com**
 Country: Sweden
-# open-gym-privacy
-Privacy policy for the Open Gym mobile app
