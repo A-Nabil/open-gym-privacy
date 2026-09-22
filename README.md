@@ -1,14 +1,14 @@
 ---
-title: Privacy Policy — Open Gym
+title: Privacy Policy — Fitholm
 permalink: /
 ---
 
-# Privacy Policy — Open Gym
+# Privacy Policy — Fitholm
 
 **Effective date:** 30 April 2026
-**Last updated:** 20 September 2026
+**Last updated:** 22 September 2026
 
-This Privacy Policy explains how the **Open Gym** mobile application
+This Privacy Policy explains how the **Fitholm** mobile application
 (package name `com.opengym.app`, the "App") collects, uses, and protects your
 personal data. The App is published on Google Play by **Ahmed Nabil**, an
 individual developer based in **Sweden**.
@@ -29,7 +29,7 @@ rights described below, please contact us at the email above.
 
 ## 1. Summary
 
-Open Gym is a personal fitness companion. It generates personalised workout
+Fitholm is a personal fitness companion. It generates personalised workout
 and nutrition plans based on profile information you enter during
 onboarding. To keep things short, here is the high-level picture:
 
@@ -38,8 +38,12 @@ onboarding. To keep things short, here is the high-level picture:
 - The App **does not show advertising** and does not contain any
   advertising SDKs.
 - The App **does not include any third-party analytics, crash reporting,
-  or tracking SDKs** (no Firebase, no Google Analytics, no Crashlytics,
-  no Facebook SDK, no Mixpanel, etc.).
+  or tracking SDKs** (no Google Analytics, no Crashlytics, no Facebook SDK,
+  no Mixpanel, etc.). It does use **Firebase App Check**, but only to prove
+  that a plan request comes from a genuine install of this App and not from
+  a script — see section 3.6. It is not analytics and it does not profile
+  you.
+- The App **does not use an advertising ID**.
 - Your fitness profile (age, height, weight, goals, dietary preferences,
   workout history, meal logs) is stored **on your device** in an
   **encrypted local database** (SQLCipher).
@@ -186,12 +190,38 @@ Sans" font families) from **Google Fonts** (`fonts.googleapis.com`) on first
 launch and caches them locally. The request includes your IP address.
 See <https://policies.google.com/privacy>.
 
-### 3.4 freeipapi.com
+### 3.4 Firebase App Check and Firebase Authentication (Google LLC)
+
+Generating a plan costs us money per request, so before the backend will
+answer it checks that the request came from a real install of this App. That
+check uses two Google services:
+
+- **Firebase App Check** asks Google Play Integrity to confirm the App was
+  installed from Google Play and has not been tampered with, and returns a
+  short-lived attestation token. To do this, Google receives device and app
+  integrity signals.
+- **Firebase Authentication** signs you in **anonymously** and issues a token.
+  Anonymous means exactly that: no email, no password, no name. It produces an
+  opaque identifier for the install, which lets the backend apply a daily
+  generation limit fairly.
+
+Both tokens are sent with the plan request and nothing else about you is
+attached to them. Neither service is used for analytics, advertising or
+tracking, and the anonymous identifier is not linked to your fitness profile,
+which never leaves your device except as described in section 2.3.
+
+If the check fails — for example on a sideloaded build — plan generation is
+unavailable and the rest of the App continues to work.
+
+See <https://policies.google.com/privacy> and
+<https://firebase.google.com/support/privacy>.
+
+### 3.5 freeipapi.com
 
 Used to detect your country from your IP address (see section 2.4). See
 <https://freeipapi.com/>.
 
-### 3.5 musclewiki.com (exercise images)
+### 3.6 musclewiki.com (exercise images)
 
 Some exercise illustrations are loaded from
 `media.musclewiki.com` and cached locally for performance.
@@ -207,6 +237,11 @@ advertising networks. We do not use cookies inside the App.
 
 The only analytics signals available to us are the standard server logs
 that Microsoft Azure produces for operational reasons (see section 2.3).
+
+The App does include Firebase App Check and anonymous Firebase
+Authentication, but these verify that a plan request comes from a genuine
+install rather than measuring what you do. They are described in section
+3.4.
 
 ---
 
@@ -305,7 +340,7 @@ The App does not have user accounts, so there is no separate
 1. Open the App.
 2. Use the in-app option to clear your profile and history, **or**
 3. Uninstall the App, **or**
-4. In Android Settings → Apps → Open Gym → Storage → "Clear data".
+4. In Android Settings → Apps → Fitholm → Storage → "Clear data".
 
 If you wish to be sure that no residual data remains in our backend
 logs, email us at **a.nabil.abdalah@gmail.com** and we will request
