@@ -141,7 +141,7 @@ precise coordinates. The request is made by your device directly to
 
 | Permission | Why |
 |---|---|
-| `INTERNET`, `ACCESS_NETWORK_STATE` | To call our backend and load exercise videos/images |
+| `INTERNET`, `ACCESS_NETWORK_STATE` | To call our backend, verify the install, and stream exercise videos |
 | `POST_NOTIFICATIONS` | To send local workout and meal reminders you schedule |
 | `VIBRATE` | To vibrate the device when a notification fires |
 | `SCHEDULE_EXACT_ALARM` | So a workout rest timer fires at the second it is due while the App is in the background. You are asked for this one and may decline; the reminder then arrives a little late instead of exactly on time |
@@ -221,10 +221,14 @@ See <https://policies.google.com/privacy> and
 Used to detect your country from your IP address (see section 2.4). See
 <https://freeipapi.com/>.
 
-### 3.6 musclewiki.com (exercise images)
+### 3.6 musclewiki.com (some exercise videos)
 
-Some exercise illustrations are loaded from
-`media.musclewiki.com` and cached locally for performance.
+Exercise illustrations all ship inside the App and are never fetched from a
+server. A small number of exercise **videos** are still streamed from
+`media.musclewiki.com` and cached locally for performance; when one plays,
+that server sees your IP address and the usual request metadata. These are
+being replaced with our own footage, after which nothing is requested from
+musclewiki.com and this section will be removed.
 
 ---
 
@@ -295,8 +299,8 @@ proportionate to the risks of the limited data we process.
 ## 8. International data transfers
 
 Our backend runs in the European Economic Area (Microsoft Azure West
-Europe). YouTube, Google Fonts, and freeipapi.com may process your IP
-address outside the EEA. Where personal data is transferred outside the
+Europe). YouTube, Google Fonts, Firebase, freeipapi.com and
+musclewiki.com may process your IP address outside the EEA. Where personal data is transferred outside the
 EEA, the recipient relies on safeguards such as the **EU Standard
 Contractual Clauses** and (for Google) the **EU–US Data Privacy
 Framework**.
